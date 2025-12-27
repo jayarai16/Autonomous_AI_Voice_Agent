@@ -113,10 +113,70 @@ Text-to-Speech Output
 - Local inference
 - Standalone demo
 
-## Files Included
+## Sample Output
 
-- `voice_agent.py`: Main interactive voice agent script
-- `demo.py`: Simulated conversation demo (no hardware required)
-- `requirements.txt`: Python package dependencies
-- `architecture.txt`: Detailed architecture diagram and explanation
-- `README.md`: Complete documentation and instructions
+Here's what the demo looks like when you run it:
+
+```
+=== Autonomous AI Voice Agent Demo ===
+Simulating a conversation for demonstration purposes.
+
+User: hello
+Agent speaks: Hello, I would like to request a refund for my recent purchase.
+User: yes
+Agent speaks: The product was damaged upon arrival.
+User: the product is damaged
+Agent speaks: Can you process the refund?
+User: please process refund
+Agent speaks: Thank you.
+User: I also want to cancel my subscription
+Agent speaks: Are you sure you want to cancel?
+User: yes
+Agent speaks: I'm sorry, I didn't understand. Can you repeat?
+User: exit
+
+=== Conversation Ended ===
+Conversation history:
+User: hello
+Agent: Hello, I would like to request a refund for my recent purchase.
+User: yes
+Agent: The product was damaged upon arrival.
+User: the product is damaged
+Agent: Can you process the refund?
+User: please process refund
+Agent: Thank you.
+User: i also want to cancel my subscription
+Agent: Are you sure you want to cancel?
+User: yes
+Agent speaks: I'm sorry, I didn't understand. Can you repeat?
+
+=== Architecture Explanation ===
+STT: Google Speech Recognition (open-source API, free)
+TTS: pyttsx3 (offline, supports voice modulation)
+Intent Detection: Keyword matching for goal-oriented dialogue
+Memory: List-based conversation storage
+Autonomy: Loop-based processing with context awareness
+Modulation: Sentiment analysis adjusts speech rate
+Modes: Scripted (predefined sequence) → Free-flow (adaptive responses)
+```
+
+### Architecture Visualization
+
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   User Input    │ -> │  Speech-to-Text │ -> │ Intent Detection│
+│  (Voice/Text)   │    │   (Google SR)   │    │ (Keyword Match) │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                        │                        │
+         ▼                        ▼                        ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│ Dialogue Logic  │ <- │ Conversation    │ -> │ Response Gen.   │
+│ (Scripted/Free) │    │    Memory       │    │ (Context-aware) │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                        │                        │
+         ▼                        ▼                        ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│ Voice Modulation│ -> │ Text-to-Speech │ -> │   Output        │
+│ (Sentiment Rate)│    │    (pyttsx3)    │    │   (Voice)       │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```

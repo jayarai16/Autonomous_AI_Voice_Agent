@@ -1,7 +1,6 @@
 # Autonomous AI Voice Agent
 
-This is a simple implementation of an AI voice agent for requesting refunds, built for the Sentienta Quality AI AI/ML Intern Test - Assignment 1.
-
+This is a simple implementation of an AI voice agent for requesting refunds.
 ## Setup Instructions
 
 ### Prerequisites
@@ -94,7 +93,7 @@ Text-to-Speech Output
 - Goal-oriented dialogue for refund requests
 - Local inference (no paid APIs used)
 
-## Assignment Compliance
+## Compliance
 
 ✅ All requirements met:
 - Speech-to-Text
